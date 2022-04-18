@@ -38,6 +38,11 @@ class HomeController {
         return "Your result is: " + (num1 / num2);
     }
 
+    @GetMapping("/home")
+    public String welcome() {
+        return "home";
+    }
+
 
 }
 
