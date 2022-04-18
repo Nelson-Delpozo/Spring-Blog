@@ -43,6 +43,11 @@ class HomeController {
         return "home";
     }
 
+    @GetMapping("/roll-dice")
+    public String dice() {
+        return "dice";
+    }
+
 
 }
 
