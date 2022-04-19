@@ -6,15 +6,17 @@
 </head>
 <body>
 <h2>pick a number below:</h2>
-<a href="/dice/1">1</a>
-<a href="/dice/2">2</a>
-<a href="/dice/3">3</a>
-<a href="/dice/4">4</a>
-<a href="/dice/5">5</a>
-<a href="/dice/6">6</a>
+<a href="/roll-dice/1">1</a>
+<a href="/roll-dice/2">2</a>
+<a href="/roll-dice/3">3</a>
+<a href="/roll-dice/4">4</a>
+<a href="/roll-dice/5">5</a>
+<a href="/roll-dice/6">6</a>
 <br>
-<h2>results:</h2>
-<h3>You chose: </h3>
+<h2>results: <span th:text="${result}"></span> </h2>
+<h3>You chose: <span th:text="${guess}"></span></h3>
+
+<h3>The di landed on: <span th:text="${roll}"></span></h3>
 
 </body>
 </html>

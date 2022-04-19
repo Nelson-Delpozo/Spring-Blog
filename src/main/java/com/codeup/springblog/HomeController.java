@@ -1,5 +1,6 @@
 package com.codeup.springblog;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -48,13 +49,20 @@ class HomeController {
         return "dice";
     }
     @GetMapping("/roll-dice/{num}")
-    @ResponseBody
-    public String diceRoll(@PathVariable int num) {
+    public String diceRoll(@PathVariable int num, Model model) {
+        String result;
+        int roll = (int) Math.floor(Math.random() * 6 + 1);
 
+        if(num == roll){
+            result = "You got it!";
+        }else{
+            result = "Sorry try again";
+        }
+        model.addAttribute("guess", num);
+        model.addAttribute("roll",roll);
+        model.addAttribute("result", result);
         return "dice";
     }
-
-
 }
 
 
