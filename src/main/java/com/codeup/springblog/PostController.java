@@ -13,6 +13,12 @@ import java.util.List;
 @Controller
 public class PostController {
 
+    private final PostRepository postDao;
+
+    public PostController(PostRepository postDao) {
+        this.postDao = postDao;
+    }
+
     @GetMapping("/posts")
 //    @ResponseBody
     public String posts(Model model) {
