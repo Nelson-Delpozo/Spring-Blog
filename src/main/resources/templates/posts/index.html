@@ -12,8 +12,10 @@
 <h2>Here are the posts:</h2>
 
 <div th:each="post : ${posts}">
+    <hr>
     <h3><span th:text="${post.title}"></span></h3>
-    <h4><span th:text="${post.body}"></span> </h4>
+    <p><span th:text="${post.body}"></span></p>
+    <hr>
 </div>
 
 <footer th:include="partials::my-footer"></footer>
