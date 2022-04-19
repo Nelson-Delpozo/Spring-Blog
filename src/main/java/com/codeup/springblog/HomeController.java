@@ -47,6 +47,12 @@ class HomeController {
     public String dice() {
         return "dice";
     }
+    @GetMapping("/roll-dice/{num}")
+    @ResponseBody
+    public String diceRoll(@PathVariable int num) {
+
+        return "dice";
+    }
 
 
 }
