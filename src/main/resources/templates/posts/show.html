@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Show</title>
+</head>
+<body>
+<header th:include="partials::my-header"></header>
+<nav th:include="partials::my-navbar"></nav>
+
+<h1>This is the show page</h1>
+<h2>Here is one post:</h2>
+<h3><span th:text="${title}"></span></h3>
+<h4><span th:text="${body}"></span> </h4>
+<footer th:include="partials::my-footer"></footer>
+</body>
+</html>

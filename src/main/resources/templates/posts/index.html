@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Show All Posts</title>
+</head>
+<body>
+<header th:include="partials::my-header"></header>
+<nav th:include="partials::my-navbar"></nav>
+
+<h1>This is the show all page</h1>
+<h2>Here are the posts:</h2>
+
+<div th:each="post : ${posts}">
+    <h3><span th:text="${post.title}"></span></h3>
+    <h4><span th:text="${post.body}"></span> </h4>
+</div>
+
+<footer th:include="partials::my-footer"></footer>
+</body>
+</html>
