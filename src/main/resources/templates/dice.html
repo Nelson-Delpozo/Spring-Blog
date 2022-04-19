@@ -5,6 +5,8 @@
     <title>Roll Dice</title>
 </head>
 <body>
+<header th:include="partials::my-header"/>
+<nav th:include="partials::my-navbar"/>
 <h2>pick a number below:</h2>
 <a href="/roll-dice/1">1</a>
 <a href="/roll-dice/2">2</a>
@@ -17,6 +19,7 @@
 <h3>You chose: <span th:text="${guess}"></span></h3>
 
 <h3>The di landed on: <span th:text="${roll}"></span></h3>
+<footer th:include="partials::my-footer"/>
 
 </body>
 </html>
