@@ -14,8 +14,8 @@ public class User {
     private String email;
     @Column(nullable = false, length = 100)
     private String password;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private List<Post> posts;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+//    private List<Post> posts;
 
     public User(long id, String username, String email, String password) {
         this.id = id;
@@ -30,8 +30,10 @@ public class User {
         this.password = password;
     }
 
-    public User() {}
+    public User() {
+    }
 
+    @Id
     public long getId() {
         return id;
     }
