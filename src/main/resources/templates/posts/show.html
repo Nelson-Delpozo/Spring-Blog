@@ -10,8 +10,12 @@
 
 <h1>This is the show page</h1>
 <h2>Here is one post:</h2>
-<h3><span th:text="${title}"></span></h3>
-<h4><span th:text="${body}"></span> </h4>
+<div th:each="post : ${posts}">
+    <hr>
+    <h3><span th:text="${post.title}"></span></h3>
+    <p><span th:text="${post.body}"></span></p>
+    <hr>
+</div>
 <footer th:include="partials::my-footer"></footer>
 </body>
 </html>

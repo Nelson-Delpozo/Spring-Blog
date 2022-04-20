@@ -4,7 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.Id;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -26,18 +28,18 @@ public class PostController {
 //        posts.add(newPost3);
 
         model.addAttribute("posts", postDao.findAll());
-
         return "posts/index";
     }
 
     @GetMapping("/posts/{id}")
 //    @ResponseBody
-    public String postID(@PathVariable int id, Model model) {
-        Post newPost = new Post(1, "I'm Thinking of Buying a Boat", "So I'm thinking I might buy a boat.");
-        String title = newPost.getTitle();
-        String body = newPost.getBody();
-        model.addAttribute("title", title);
-        model.addAttribute("body", body);
+    public String postID(@PathVariable long id, Model model) {
+//        Post newPost = new Post(1, "I'm Thinking of Buying a Boat", "So I'm thinking I might buy a boat.");
+//        String title = newPost.getTitle();
+//        String body = newPost.getBody();
+//        model.addAttribute("title", title);
+//        model.addAttribute("body", body);
+        model.addAttribute("posts", postDao.findAllById(Collections.singleton(id)));
         return "posts/show";
     }
 
@@ -57,8 +59,6 @@ public class PostController {
         postDao.save(newPost);
 //        model.addAttribute("posts", postDao.findAll());
 //        model.addAttribute("body", body);
-
-
         return "redirect:/posts";
     }
 
