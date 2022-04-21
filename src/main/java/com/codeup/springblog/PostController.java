@@ -66,4 +66,18 @@ public class PostController {
         postDao.save(post);
         return "redirect:/posts";
     }
+
+    @GetMapping("/edit/{id}")
+//    @ResponseBody
+    public String edit(@PathVariable long id, Model model) {
+        model.addAttribute("post", postDao.getById(id));
+//        model.addAttribute("user", new User());
+        return "edit";
+    }
+
+    @PostMapping("/edit")
+    public String edit(@ModelAttribute Post post) {
+        postDao.save(post);
+        return "redirect:/posts";
+    }
 }
