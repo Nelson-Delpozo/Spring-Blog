@@ -30,6 +30,8 @@ public class PostController {
 //    @ResponseBody
     public String postID(@PathVariable long id, Model model) {
         model.addAttribute("posts", postDao.findAllById(Collections.singleton(id)));
+        String userEmail = userDAO.getUserById(1).getEmail();
+        model.addAttribute("userEmail", userEmail);
         return "posts/show";
     }
 
