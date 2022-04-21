@@ -53,8 +53,12 @@ public class PostController {
 //    @ResponseBody
     public String post(@RequestParam(name = "title") String title, @RequestParam(name = "body") String body) {
         Post newPost = new Post();
+//        User user = userDAO.getUserById(1L);
         newPost.setTitle(title);
         newPost.setBody(body);
+//        newPost.setUser(user);
+
+//        newPost.setUser(userDAO.getUserById(1));
         postDao.save(newPost);
 //        model.addAttribute("posts", postDao.findAll());
 //        model.addAttribute("body", body);

@@ -31,7 +31,7 @@ public class User {
     public User() {
     }
 
-    @Id
+
     public long getId() {
         return id;
     }
