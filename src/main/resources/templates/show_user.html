@@ -2,19 +2,25 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Users</title>
+    <title>One User</title>
 </head>
 <body>
 <header th:include="partials::my-header"></header>
 <nav th:include="partials::my-navbar"></nav>
 
-<h1>This is the show users page</h1>
-<h2>Here are the users:</h2>
+<h1>This is the show one user page</h1>
+<h2>Here is the user:</h2>
 
-<div th:each="user : ${users}">
+<div>
     <hr>
     <h3><span th:text="${user.getUsername()}"></span></h3>
     <p><span th:text="${user.getEmail()}"></span></p>
+    <hr>
+    <h4>Here are <span th:text="${user.getUsername()}"></span>'s posts:</h4>
+        <div th:each="post : ${posts}">
+       <span th:text="${post.getTitle()}"></span>
+            <hr>
+        </div>
     <hr>
 </div>
 

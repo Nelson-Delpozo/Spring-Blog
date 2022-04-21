@@ -2,9 +2,11 @@ package com.codeup.springblog;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 public interface PostRepository extends JpaRepository<Post, Long> {
 
     Post getById(long id);
-    Post getByUser(User user);
+    List<Post> getByUser(User user);
 
 }

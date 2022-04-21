@@ -35,9 +35,13 @@ public class PostController {
     @GetMapping("/users/{id}")
 //    @ResponseBody
     public String userID(@PathVariable long id, Model model) {
-        model.addAttribute("users", userDAO.findAllById(Collections.singleton(id)));
-//        model.addAttribute("posts", postDao.getByUser(userDAO.getUserById(id)));
-        return "users";
+        User currentUser = userDAO.getUserById(id);
+        List<Post> posts = postDao.getByUser(currentUser);
+        model.addAttribute("user", currentUser);
+        model.addAttribute("posts", posts);
+//        System.out.println("currentUser = " + currentUser.getUsername() + " " + currentUser.getEmail());
+//        System.out.println("posts = " + posts);
+        return "show_user";
     }
 
     @GetMapping("/users")

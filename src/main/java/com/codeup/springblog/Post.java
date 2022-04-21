@@ -3,9 +3,10 @@ package com.codeup.springblog;
 import org.hibernate.mapping.ToOne;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Post {
+public class Post implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
