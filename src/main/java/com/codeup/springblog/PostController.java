@@ -21,8 +21,8 @@ public class PostController {
 //    @ResponseBody
     public String posts(Model model) {
         model.addAttribute("posts", postDao.findAll());
-        String username = userDAO.getUserById(1).getUsername();
-        model.addAttribute("username", username);
+        String userEmail = userDAO.getUserById(1).getEmail();
+        model.addAttribute("userEmail", userEmail);
         return "posts/index";
     }
 
@@ -48,10 +48,10 @@ public class PostController {
         newPost.setTitle(title);
         newPost.setBody(body);
         newPost.setUser(userDAO.getUserById(1));
-        String username = userDAO.getUserById(1).getUsername();
+        String userEmail = userDAO.getUserById(1).getEmail();
         postDao.save(newPost);
         model.addAttribute("posts", postDao.findAll());
-        model.addAttribute("username", username);
+        model.addAttribute("userEmail", userEmail);
         return "/posts/index";
     }
 }
