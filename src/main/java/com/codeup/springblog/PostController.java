@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
+import java.util.List;
 
 @Controller
 public class PostController {
@@ -35,6 +36,7 @@ public class PostController {
 //    @ResponseBody
     public String userID(@PathVariable long id, Model model) {
         model.addAttribute("users", userDAO.findAllById(Collections.singleton(id)));
+//        model.addAttribute("posts", postDao.getByUser(userDAO.getUserById(id)));
         return "users";
     }
 
