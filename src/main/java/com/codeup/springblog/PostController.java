@@ -21,6 +21,8 @@ public class PostController {
 //    @ResponseBody
     public String posts(Model model) {
         model.addAttribute("posts", postDao.findAll());
+        String username = userDAO.getUserById(1).getUsername();
+        model.addAttribute("username", username);
         return "posts/index";
     }
 
@@ -50,6 +52,6 @@ public class PostController {
         postDao.save(newPost);
         model.addAttribute("posts", postDao.findAll());
         model.addAttribute("username", username);
-        return "posts/index";
+        return "/posts/index";
     }
 }
