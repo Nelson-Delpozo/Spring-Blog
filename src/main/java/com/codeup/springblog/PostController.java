@@ -4,18 +4,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.Id;
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 @Controller
 public class PostController {
 
     private final PostRepository postDao;
+    private final UserRepository userDAO;
 
-    public PostController(PostRepository postDao) {
+    public PostController(PostRepository postDao, UserRepository userDAO) {
         this.postDao = postDao;
+        this.userDAO = userDAO;
     }
 
     @GetMapping("/posts")

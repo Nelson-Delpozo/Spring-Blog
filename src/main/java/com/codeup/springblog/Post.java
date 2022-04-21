@@ -6,33 +6,26 @@ import javax.persistence.*;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @Column(nullable = false, length = 100)
     private String title;
     @Column(nullable = false)
     private String body;
-
-//    @ManyToOne
-//    @JoinColumn(name = "user_id")
+//    @OneToOne
 //    private User user;
 
-//    public User getUser() {
-//        return user;
-//    }
-//
-//    public void setUser(User user) {
-//        this.user = user;
-//    }
 
     public Post(long id, String title, String body) {
         this.id = id;
         this.title = title;
         this.body = body;
+
     }
 
     public Post(String title, String body) {
         this.title = title;
         this.body = body;
+
     }
 
     public Post() {}
@@ -58,7 +51,9 @@ public class Post {
     }
 
     @Id
-    public Long getId() {
+    public long getId() {
         return id;
     }
+
+
 }
