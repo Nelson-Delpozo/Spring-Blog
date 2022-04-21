@@ -60,14 +60,10 @@ public class PostController {
     }
 
     @PostMapping("/posts/create")
-//    @ResponseBody
-    public String post(@RequestParam(name = "title") String title, @RequestParam(name = "body") String body, Model model) {
-        Post newPost = new Post();
-        newPost.setTitle(title);
-        newPost.setBody(body);
+    public String post(@ModelAttribute Post post) {
         long id = (long) (Math.floor(Math.random() * 3) + 1);//this just assigns a random user id to a post for fun that's all...will replace later.
-        newPost.setUser(userDAO.getUserById(id));
-        postDao.save(newPost);
+        post.setUser(userDAO.getUserById(id));
+        postDao.save(post);
         return "redirect:/posts";
     }
 }

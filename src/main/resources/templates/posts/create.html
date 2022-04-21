@@ -10,13 +10,23 @@
 
 <h1>This is the create post page</h1>
 <h2>Here is the form:</h2>
-<form method="post">
+<!--<form method="post">-->
+<!--    <h5>enter title:</h5>-->
+<!--    <input type="text" name="title" id="title">-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <h5>enter body of post:</h5>-->
+<!--    <textarea name="body" id="body" rows="25" cols="100"></textarea>-->
+<!--    <br>-->
+<!--    <input type="submit" value="submit post">-->
+<!--</form>-->
+<form th:action="@{/posts/create}" th:method="post" th:object="${post}">
     <h5>enter title:</h5>
-    <input type="text" name="title" id="title">
+    <input th:field="*{title}" />
     <br>
     <br>
     <h5>enter body of post:</h5>
-    <textarea name="body" id="body" rows="25" cols="100"></textarea>
+    <textarea th:field="*{body}" id="body" rows="25" cols="100"></textarea>
     <br>
     <input type="submit" value="submit post">
 </form>
