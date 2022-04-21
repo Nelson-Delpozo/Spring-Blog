@@ -12,9 +12,9 @@
 <h2>Here is one post:</h2>
 <div th:each="post : ${posts}">
     <hr>
-    <h3><span th:text="${post.title}"></span></h3>
-    <p><span th:text="${post.body}"></span></p>
-    <h6>submitted by: <span th:text="${post.user.getEmail()}"></span></h6>
+    <h3><span th:text="${post.getTitle()}"></span></h3>
+    <p><span th:text="${post.getBody()}"></span></p>
+    <h6>submitted by: <span th:text="${post.getUser().getEmail()}"></span></h6>
     <hr>
 </div>
 <footer th:include="partials::my-footer"></footer>
