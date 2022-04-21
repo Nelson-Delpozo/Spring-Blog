@@ -15,8 +15,7 @@
     <hr>
     <h3><span th:text="${post.title}"></span></h3>
     <p><span th:text="${post.body}"></span></p>
-    <h6>submitted by: <span th:text="${userEmail}"></span></h6>
-<!--    <p><span th:text="${post.user.getUsername()}"></span></p>-->
+    <h6>submitted by: <span th:text="${post.user.getEmail()}"></span></h6>
     <hr>
 </div>
 

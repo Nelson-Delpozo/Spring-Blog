@@ -21,8 +21,6 @@ public class PostController {
 //    @ResponseBody
     public String posts(Model model) {
         model.addAttribute("posts", postDao.findAll());
-        String userEmail = userDAO.getUserById(1).getEmail();
-        model.addAttribute("userEmail", userEmail);
         return "posts/index";
     }
 
@@ -30,8 +28,6 @@ public class PostController {
 //    @ResponseBody
     public String postID(@PathVariable long id, Model model) {
         model.addAttribute("posts", postDao.findAllById(Collections.singleton(id)));
-        String userEmail = userDAO.getUserById(1).getEmail();
-        model.addAttribute("userEmail", userEmail);
         return "posts/show";
     }
 
@@ -49,11 +45,9 @@ public class PostController {
         Post newPost = new Post();
         newPost.setTitle(title);
         newPost.setBody(body);
-        newPost.setUser(userDAO.getUserById(1));
-        String userEmail = userDAO.getUserById(1).getEmail();
+        long id = (long) (Math.floor(Math.random() * 3) + 1);//this just assigns a random user id to a post for fun that's all...will replace later.
+        newPost.setUser(userDAO.getUserById(id));
         postDao.save(newPost);
-        model.addAttribute("posts", postDao.findAll());
-        model.addAttribute("userEmail", userEmail);
-        return "/posts/index";
+        return "redirect:/posts";
     }
 }
