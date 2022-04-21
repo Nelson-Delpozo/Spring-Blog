@@ -31,6 +31,20 @@ public class PostController {
         return "posts/show";
     }
 
+    @GetMapping("/users/{id}")
+//    @ResponseBody
+    public String userID(@PathVariable long id, Model model) {
+        model.addAttribute("users", userDAO.findAllById(Collections.singleton(id)));
+        return "users";
+    }
+
+    @GetMapping("/users")
+//    @ResponseBody
+    public String users(Model model) {
+        model.addAttribute("users", userDAO.findAll());
+        return "users";
+    }
+
     @GetMapping("/posts/create")
 //    @ResponseBody
     public String create(Model model) {

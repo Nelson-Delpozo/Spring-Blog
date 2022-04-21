@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+<header th:include="partials::my-header"></header>
+<nav th:include="partials::my-navbar"></nav>
+
+<h1>This is the show users page</h1>
+<h2>Here are the users:</h2>
+
+<div th:each="user : ${users}">
+    <hr>
+    <h3><span th:text="${user.username}"></span></h3>
+    <p><span th:text="${user.getEmail()}"></span></p>
+    <hr>
+</div>
+
+<footer th:include="partials::my-footer"></footer>
+
+</body>
+</html>
