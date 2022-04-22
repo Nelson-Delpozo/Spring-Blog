@@ -26,7 +26,7 @@ public class PostController {
 //        this.userDAO = userDAO;
 //    }
 
-    @GetMapping("/posts")
+    @GetMapping("/")
 //    @ResponseBody
     public String posts(Model model) {
         model.addAttribute("posts", postDao.findAll());
@@ -75,7 +75,7 @@ public class PostController {
         post.setUser((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         postDao.save(post);
         emailService.prepareAndSend(post, "post created", "Confirmation: your post has been created");
-        return "redirect:/posts";
+        return "redirect:/";
     }
 
     @GetMapping("posts/{id}/edit")
@@ -89,6 +89,6 @@ public class PostController {
     @PostMapping("/edit")
     public String edit(@ModelAttribute Post post) {
         postDao.save(post);
-        return "redirect:/posts";
+        return "redirect:/";
     }
 }

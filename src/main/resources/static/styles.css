@@ -15,10 +15,10 @@ footer{
     display: flex;
     background-color: dimgray;
     color: lightgray;
-    justify-content: flex-start;
-    justify-items: flex-start;
-    align-items: flex-start;
-    align-content: flex-start;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
 }
 header{
     display: flex;
