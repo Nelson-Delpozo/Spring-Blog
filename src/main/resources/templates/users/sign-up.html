@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
-    <meta charset="UTF-8" />
-    <title>SpringBlog</title>
-    <link href="/styles.css" rel="stylesheet">
-</head>
+<head th:include="partials::head">
 <body>
+<header th:include="partials::my-header"></header>
+<nav th:include="partials::my-navbar"></nav>
 <h1>Create an account</h1>
 <form th:action="@{/sign-up}" method="POST" th:object="${user}">
     <label for="username">Username</label>
@@ -20,5 +18,8 @@
 
     <input value="Sign me up!" type="submit" />
 </form>
+<br>
+<br>
+<footer th:include="partials::my-footer"></footer>
 </body>
 </html>
