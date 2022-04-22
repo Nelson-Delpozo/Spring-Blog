@@ -1,5 +1,6 @@
 package com.codeup.springblog;
 
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -68,8 +69,10 @@ public class PostController {
 
     @PostMapping("/posts/create")
     public String post(@ModelAttribute Post post) {
-        long id = (long) (Math.floor(Math.random() * 3) + 1);//this just assigns a random user id to a post for fun that's all...will replace later.
-        post.setUser(userDAO.getUserById(id));
+//        long id = (long) (Math.floor(Math.random() * 3) + 1);
+        //this just assigns a random user id to a post for fun that's all...will replace later.
+//        post.setUser(userDAO.getUserById(id));
+        post.setUser((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         postDao.save(post);
         emailService.prepareAndSend(post, "post created", "Confirmation: your post has been created");
         return "redirect:/posts";

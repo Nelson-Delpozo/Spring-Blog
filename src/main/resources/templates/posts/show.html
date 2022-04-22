@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8" />
-    <title>Show</title>
+    <title>SpringBlog</title>
+    <link href="/styles.css" rel="stylesheet">
 </head>
 <body>
 <header th:include="partials::my-header"></header>
@@ -14,7 +16,7 @@
     <hr>
     <h3><span th:text="${post.getTitle()}"></span></h3>
     <p><span th:text="${post.getBody()}"></span></p>
-    <h6>submitted by: <span th:text="${post.getUser().getEmail()}"></span></h6>
+    <h6>submitted by: <span th:text="${post.user.getUsername()}"></span></h6>
     <hr>
 </div>
 <footer th:include="partials::my-footer"></footer>

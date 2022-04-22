@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8" />
-    <title>Partials</title>
-    <link href="styles.css" rel="stylesheet">
+    <title>SpringBlog</title>
+    <link href="/styles.css" rel="stylesheet">
 </head>
 <body>
 <header th:fragment="my-header">
     Here is my header
 </header>
 <nav th:fragment="my-navbar">
-    This is my navbar
+    <form th:action="@{/logout}" th:method="post">
+        <button class="btn-link btn" style="margin-top: 8px">Logout</button>
+    </form>
 </nav>
 <footer th:fragment="my-footer">
     This is my footer

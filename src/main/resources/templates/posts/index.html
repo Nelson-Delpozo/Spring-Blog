@@ -1,21 +1,31 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8" />
-    <title>Show All Posts</title>
+    <title>SpringBlog</title>
+    <link href="/styles.css" rel="stylesheet">
 </head>
 <body>
 <header th:include="partials::my-header"></header>
 <nav th:include="partials::my-navbar"></nav>
 
 <h1>This is the show all page</h1>
+<div sec:authorize="isAuthenticated()">
+    This content is only shown to authenticated users.
+
+    User ID: <span th:text="${#authentication.principal.id}"/><br>
+    Username: <span th:text="${#authentication.principal.username}"/><br>
+    Email: <span th:text="${#authentication.principal.email}"/><br>
+</div>
+<br>
 <h2>Here are the posts:</h2>
 
 <div th:each="post : ${posts}">
     <hr>
     <h3><span th:text="${post.getTitle()}"></span></h3>
     <p><span th:text="${post.getBody()}"></span></p>
-    <h6>submitted by: <span th:text="${post.getUser().getEmail()}"></span></h6>
+    <h6>submitted by: <span th:text="${post.getUser().getUsername()}"></span></h6>
     <hr>
 </div>
 
