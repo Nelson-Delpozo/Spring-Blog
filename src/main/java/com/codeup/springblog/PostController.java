@@ -12,11 +12,18 @@ public class PostController {
 
     private final PostRepository postDao;
     private final UserRepository userDAO;
+    private final EmailService emailService;
 
-    public PostController(PostRepository postDao, UserRepository userDAO) {
+    public PostController(PostRepository postDao, UserRepository userDAO, EmailService emailService) {
         this.postDao = postDao;
+        this.emailService = emailService;
         this.userDAO = userDAO;
     }
+
+//    public PostController(PostRepository postDao, UserRepository userDAO) {
+//        this.postDao = postDao;
+//        this.userDAO = userDAO;
+//    }
 
     @GetMapping("/posts")
 //    @ResponseBody
