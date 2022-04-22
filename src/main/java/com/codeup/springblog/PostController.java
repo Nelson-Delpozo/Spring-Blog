@@ -75,7 +75,7 @@ public class PostController {
         return "redirect:/posts";
     }
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("posts/{id}/edit")
 //    @ResponseBody
     public String edit(@PathVariable long id, Model model) {
         model.addAttribute("post", postDao.getById(id));
