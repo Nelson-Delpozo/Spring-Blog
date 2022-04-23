@@ -1,6 +1,7 @@
 package com.codeup.springblog;
 
 import org.hibernate.mapping.ToOne;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -17,6 +18,7 @@ public class Post implements Serializable {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+    private String uploadPath;
 
     public Post() {
     }

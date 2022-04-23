@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:include="partials::head">
+</head>
+<body>
+<header th:include="partials::my-header"></header>
+<nav th:include="partials::my-navbar"></nav>
+<form method="post" enctype="multipart/form-data">
+    <label for="file">Upload an image!</label>
+    <input id="file" name="file" type="file" />
+    <br />
+    <input type="submit" value="upload" />
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+</form>
+<footer th:include="partials::my-footer"></footer>
+</body>
+</html>
