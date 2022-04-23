@@ -23,11 +23,19 @@ public class Post implements Serializable {
     public Post() {
     }
 
-    public Post(long id, String title, String body, User user) {
+    public Post(long id, String title, String body, User user, String uploadPath) {
         this.id = id;
         this.title = title;
         this.body = body;
         this.user = user;
+        this.uploadPath = uploadPath;
+    }
+
+    public Post(String title, String body, User user, String uploadPath) {
+        this.title = title;
+        this.body = body;
+        this.user = user;
+        this.uploadPath = uploadPath;
     }
 
     public Post(String title, String body, User user) {
@@ -66,5 +74,13 @@ public class Post implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getUploadPath() {
+        return uploadPath;
+    }
+
+    public void setUploadPath(String uploadPath) {
+        this.uploadPath = uploadPath;
     }
 }
