@@ -33,7 +33,7 @@ public class FileUploadController {
         File destinationFile = new File(filepath);
         try {
             uploadedFile.transferTo(destinationFile);
-            model.addAttribute("message", "File successfully uploaded!");
+            model.addAttribute("message", "File " + filename + " successfully uploaded!");
         } catch (IOException e) {
             e.printStackTrace();
             model.addAttribute("message", "Oops! Something went wrong! " + e);

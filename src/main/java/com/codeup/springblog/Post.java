@@ -18,6 +18,7 @@ public class Post implements Serializable {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+    @Value("${file-upload-path}")
     private String uploadPath;
 
     public Post() {
