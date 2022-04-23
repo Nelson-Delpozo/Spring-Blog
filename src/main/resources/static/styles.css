@@ -4,13 +4,27 @@
 
 nav{
     display: flex;
-    background-color: dimgray;
+    background-color: black;
     color: lightgray;
     justify-content: flex-start;
     justify-items: flex-start;
-    align-items: flex-start;
-    align-content: flex-start;
+    align-items: center;
+    align-content: center;
 }
+
+nav *{
+    color: lightgray;
+    padding: 5px;
+}
+
+nav form{
+    margin-left: auto;
+}
+
+nav form button{
+    color: black;
+}
+
 footer{
     display: flex;
     background-color: dimgray;
@@ -28,4 +42,5 @@ header{
     justify-items: flex-start;
     align-items: flex-start;
     align-content: flex-start;
+    height: 100px;
 }
