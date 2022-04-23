@@ -20,7 +20,7 @@
 
 <div th:each="post : ${posts}">
     <hr>
-    <h3><span th:text="${post.getTitle()}"></span></h3>
+    <h3><strong><span th:text="${post.getTitle()}"></span></strong></h3>
     <p><span th:text="${post.getBody()}"></span></p>
     <h6>submitted by: <span th:text="${post.getUser().getUsername()}"></span></h6>
     <hr>

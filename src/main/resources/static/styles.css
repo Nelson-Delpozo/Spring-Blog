@@ -2,6 +2,14 @@
     box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6, a{
+    font-family: 'Anton', sans-serif;
+}
+
+p, span{
+    font-family: 'Montserrat', sans-serif;
+}
+
 nav{
     display: flex;
     background-color: black;
@@ -10,11 +18,13 @@ nav{
     justify-items: flex-start;
     align-items: center;
     align-content: center;
+    padding-left: 2em;
 }
 
 nav *{
     color: lightgray;
     padding: 5px;
+    text-decoration: none;
 }
 
 nav form{
@@ -37,7 +47,8 @@ footer{
 header{
     display: flex;
     background-color: dimgray;
-    color: lightgray;
+    color: black;
+    padding-left: 2em;
     justify-content: flex-start;
     justify-items: flex-start;
     align-items: flex-start;
