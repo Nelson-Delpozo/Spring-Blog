@@ -6,16 +6,22 @@
 <body>
 <header th:include="partials::my-header"></header>
 <nav th:include="partials::my-navbar"></nav>
-<section>
-
+<section id="error">
     <th:block th:switch="${error}">
         <div th:case="'Not Found'">
-            <h1>Page not found!!</h1>
+            <h1>404!!</h1>
+            <h2>That means you're looking for a page that doesn't exist for some reason. Why would you do that?</h2>
         </div>
         <div th:case="'Forbidden'">
-            <h1>You don't have permission to view this page.</h1>
+            <h1>403!!</h1>
+            <h2>You don't have permission to view this page.</h2>
         </div>
     </th:block>
+    <br>
+    <br>
+    <img src="/markymark.jpg">
+    <br>
+    <br>
 </section>
 
 <footer th:include="partials::my-footer"></footer>

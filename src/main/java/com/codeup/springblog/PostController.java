@@ -91,4 +91,9 @@ public class PostController {
         postDao.save(post);
         return "redirect:/";
     }
+
+    @GetMapping("/error")
+    public String error(){
+        return "/error/500.html";
+    }
 }

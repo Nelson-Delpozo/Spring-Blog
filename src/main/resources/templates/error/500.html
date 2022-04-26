@@ -6,12 +6,15 @@
 <body>
 <header th:include="partials::my-header"></header>
 <nav th:include="partials::my-navbar"></nav>
-<section>
-
-    <h1>Oops, this page is not available due to an internal server error!</h1>
+<section id="error">
+    <h1>500!</h1>
+    <h2>Oops, this page is not available due to an internal server error!</h2>
+    <br>
+    <br>
+    <img src="/r2.webp">
+    <br>
+    <br>
 </section>
-
-
 <footer th:include="partials::my-footer"></footer>
 </body>
 </html>

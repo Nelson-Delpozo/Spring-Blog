@@ -1,16 +1,16 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, a{
+h1, h2, h3, h4, h5, h6, a {
     font-family: 'Anton', sans-serif;
 }
 
-p, span{
+p, span {
     font-family: 'Montserrat', sans-serif;
 }
 
-nav{
+nav {
     display: flex;
     background-color: black;
     color: lightgray;
@@ -21,21 +21,21 @@ nav{
     padding-left: 2em;
 }
 
-nav *{
+nav * {
     color: lightgray;
     padding: 5px;
     text-decoration: none;
 }
 
-nav form{
+nav form {
     margin-left: auto;
 }
 
-nav form button{
+nav form button {
     color: black;
 }
 
-footer{
+footer {
     display: flex;
     background-color: dimgray;
     color: lightgray;
@@ -44,7 +44,8 @@ footer{
     align-items: center;
     align-content: center;
 }
-header{
+
+header {
     display: flex;
     background-color: dimgray;
     color: black;
@@ -54,4 +55,33 @@ header{
     align-items: flex-start;
     align-content: flex-start;
     height: 100px;
+}
+
+#error {
+    text-align: center;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+#error h1 {
+    font-size: xxx-large;
+    color: darkblue;
+    font-family: 'Anton', sans-serif;
+}
+
+#error h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: larger;
+    color: darkblue;
+}
+
+#error img {
+    width: 500px;
+
 }
