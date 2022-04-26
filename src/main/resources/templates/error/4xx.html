@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:include="partials::head">
+</head>
+<body>
+<header th:include="partials::my-header"></header>
+<nav th:include="partials::my-navbar"></nav>
+<section>
+
+    <th:block th:switch="${error}">
+        <div th:case="'Not Found'">
+            <h1>Page not found!!</h1>
+        </div>
+        <div th:case="'Forbidden'">
+            <h1>You don't have permission to view this page.</h1>
+        </div>
+    </th:block>
+</section>
+
+<footer th:include="partials::my-footer"></footer>
+</body>
+</html>
