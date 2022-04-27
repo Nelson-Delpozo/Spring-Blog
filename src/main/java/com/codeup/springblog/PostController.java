@@ -92,6 +92,13 @@ public class PostController {
         return "redirect:/";
     }
 
+    @GetMapping("posts/{id}/delete")
+    public String delete(@PathVariable long id, Model model) {
+        Post post = postDao.getById(id);
+        postDao.delete(post);
+        return "redirect:/";
+    }
+
     @GetMapping("/error")
     public String error(){
         return "/error/500.html";
