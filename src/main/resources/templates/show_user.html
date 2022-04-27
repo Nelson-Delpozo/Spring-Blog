@@ -14,7 +14,7 @@
     <h3><span th:text="${user.getUsername()}"></span></h3>
     <p><span th:text="${user.getEmail()}"></span></p>
     <hr>
-    <h4>Here are <span th:text="${user.getUsername()}"></span>'s posts:</h4>
+    <h4>Here are the posts from <span th:text="${user.getUsername()}"></span></h4>
         <div th:each="post : ${posts}">
        <span th:text="${post.getTitle()}"></span>
             <hr>
