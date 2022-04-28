@@ -39,6 +39,12 @@ class HomeController {
         model.addAttribute("result", result);
         return "dice";
     }
+
+    @GetMapping("/space")
+    @ResponseBody
+    public String space() {
+        return "you are in space!";
+    }
 }
 
 
