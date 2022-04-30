@@ -45,6 +45,12 @@ class HomeController {
     public String space() {
         return "you are in space!";
     }
+
+    @GetMapping("/knuckle")
+    @ResponseBody
+    public String knuckle() {
+        return "you are a knucklehead!";
+    }
 }
 
 
