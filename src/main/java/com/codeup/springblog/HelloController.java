@@ -23,4 +23,11 @@ class HelloController {
     public String addOne(@PathVariable int number) {
         return number + " plus one is " + (number + 1) + "!";
     }
+
+    @GetMapping("/bam")
+    @ResponseBody
+    public String bam() {
+        return "bam bam, bam bam bam!";
+    }
+
 }
