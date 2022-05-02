@@ -30,4 +30,10 @@ class HelloController {
         return "bam bam, bam bam bam!";
     }
 
+    @GetMapping("/cindy")
+    @ResponseBody
+    public String cindy() {
+        return "hello, Cindy!";
+    }
+
 }
